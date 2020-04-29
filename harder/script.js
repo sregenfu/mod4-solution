@@ -63,12 +63,16 @@ WARNING!!! WARNING!!!
 //    helloSpeaker.xxxx
   // }
 // }
+(function () {
+
 var names = ["Yaakov", "John", "Jen", "Jason", "Paul", "Frank", "Larry", "Paula", "Laura", "Jim"];
-var firstLetter = "J"
 for (var i = 0; i < names.length; i++) {
-	if ((names[i].charAt(0)== firstLetter) || (names[i].charAt(0)== firstLetter.toUpperCase())){
-		byeSpeaker.speak(names[i]);
-	 } else {
-		helloSpeaker.speak(names[i]);		 
-		}
- }
+  var firstLetter = names[i].charAt(0).toLowerCase();
+  if (firstLetter === 'j') {
+    byeSpeaker.speak(names[i]);
+  } else {
+    helloSpeaker.speak(names[i]);
+  }
+}
+
+})();
